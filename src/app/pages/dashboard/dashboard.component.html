@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="card">
+    <table class="table table-striped">
+     
+      <thead>
+          <tr>
+            <th scope="col">PRODUCT ID</th>
+            <th scope="col">PRODUCT NAME</th>
+            <th scope="col">CATEGORY ID</th>
+            <th scope="col">CATEGORY NAME</th>
+          </tr>
+        </thead>
+      <tr *ngFor="let item of someList | slice: (page - 1) * pageSize:(page - 1) * pageSize + pageSize">
+     
+        <td>{{item.prod_id}}</td>
+        <td>{{item.prod_name}}</td>
+        <td>{{item.category_1d}}</td>
+        <td>{{item.category_name}}</td>
+      </tr>
+      
+    </table>
+    <ngb-pagination
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="someList.length"></ngb-pagination>
+  </div>
+</div>
